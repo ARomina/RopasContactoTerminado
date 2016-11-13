@@ -49,10 +49,7 @@ public class ControladorContacto {
 		String mailFrom = "info.ropas.app@gmail.com";
 		String asunto = mensaje.getAsuntoMail();
 		String texto = "Enviado por: " + mensaje.getNombreMail() + " \nDirección de correo electrónico: " + mensaje.getEmailMail() + " \nMensaje: " + mensaje.getTextoMail();
-		 
-		//traigo un objeto de la clase para enviar
-		//ClaseEnvioMail mailer = new ClaseEnvioMail();
-		 
+		
 		try {
 		   //con el objeto para enviar, llamo al metodo de envio
 		   servicioContacto.enviarMailSimple(host, port, mailFrom, password, mailTo, asunto, texto);
@@ -60,7 +57,6 @@ public class ControladorContacto {
 		}catch(Exception e){
 		    e.printStackTrace();
 		    return new ModelAndView("error", modelo);
-		}
-		
+		}	
 	}	
 }
